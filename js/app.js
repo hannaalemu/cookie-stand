@@ -96,6 +96,10 @@ var alki = {
 
 console.log(alki.getRandomInt());
 
+var custNumsAll = document.getElementById('customerNum');
+custNumsAll.textContent =alki.getRandomInt();
+
+
 
 
 
