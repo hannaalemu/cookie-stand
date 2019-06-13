@@ -93,14 +93,13 @@ for (var i = 0; i < Store.list.length; i++) {
 
 //creating events
 var form = document.getElementById('myForm');
-//document.getElementById('addStore').onclick;
+
 form.addEventListener ('submit' , addNewStore);
 
 
 function addNewStore (event) {
   event.preventDefault();
-  // console.log(event);
-  //console.log(event.target.name.value);
+
   var newName = event.target.name.value;
   var newMinCustomers =event.target.minCust.value;
   var newMaxCustomers =event.target.maxCust.value;
@@ -110,6 +109,7 @@ function addNewStore (event) {
   //console.log(Store.list);
   Store.list[Store.list.length-1].render();
 }
+//CREATE A LAST COLUMN CALLED TOTALS THAT ADDS THE TOTAL COOKIES SOLD AT A LOCATION FOR THE DAY
 
 var renderTotalForAll = function () {
   var tableFoot = document.getElementById('sumData');
@@ -127,4 +127,30 @@ var renderTotalForAll = function () {
   }
 
 };
+//CREATE A ROW THAT CALCULATES ALL THE COOKIES SOLD AT ALL LOCATIONS FOR THE OUR...
+var renderFooter = function () {
+  var tableFoot = document.getElementById('sumData');
+  var tableRow = document.createElement('tr');
 
+  var cell = document.createElement('td');
+  cell.textContent = 'Total';
+  tableRow.appendChild(cell);
+
+  for (var i = 0; i < times.length; i++) {
+    cell = document.createElement('td');
+    cell.textContent = hoursTotalForAll[i];
+    tableRow.appendChild(cell);
+  }
+  var allCookies = 0;
+  for ( var j = 0; j < hoursTotalForAll.length; j++){
+    allCookies += hoursTotalForAll[j];
+  }
+  cell = document.createElement('td');
+  cell.textContent = allCookies;
+  tableRow.appendChild(cell);
+  console.log(hoursTotalForAll);
+  tableFoot.appendChild(tableRow);
+};
+
+
+renderFooter (hoursTotalForAll[i]);
