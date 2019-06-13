@@ -4,8 +4,6 @@
 
 var times = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-var hoursTotalForAll = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
-
 // var firstAndPike = new Store('first and pike', '23', '65', '6.3');
 function Store(name, minCustomers, maxCustomers, avgCookiesPerCustomer) {
   this.name = name;
@@ -30,9 +28,8 @@ Store.generateCookiesSold = function (object) {
     var cookies = Math.floor(object.getRandomInt() * object.avgCookiesPerCustomer);
     object.hourlyCookiesArray.push(cookies);
     object.totalCookiesSold += cookies;
-    hoursTotalForAll[i] += cookies;
   }
-  console.log(hoursTotalForAll[i]);
+
 };
 
 Store.prototype.render = function () {
@@ -47,6 +44,8 @@ Store.prototype.render = function () {
     cell.textContent = this.hourlyCookiesArray[i];
     tableRow.appendChild(cell);
   }
+
+
   cell = document.createElement('td');
   cell.textContent = this.totalCookiesSold;
   tableRow.appendChild(cell);
@@ -58,18 +57,18 @@ var renderTimes = function () {
   var tableHead = document.getElementById('timeData');
   var tableRow = document.createElement('tr');
 
-  var cell = document.createElement('th');
+  var cell = document.createElement('td');
   cell.textContent = '';
   tableRow.appendChild(cell);
 
   for (var i = 0; i < times.length; i++) {
-    cell = document.createElement('th');
+    cell = document.createElement('td');
     cell.textContent = times[i];
     tableRow.appendChild(cell);
     tableHead.appendChild(tableRow);
   }
 
-  cell = document.createElement('th');
+  cell = document.createElement('td');
   cell.textContent = 'Daily Total';
   tableRow.appendChild(cell);
 
@@ -110,21 +109,4 @@ function addNewStore (event) {
   //console.log(Store.list);
   Store.list[Store.list.length-1].render();
 }
-
-var renderTotalForAll = function () {
-  var tableFoot = document.getElementById('sumData');
-  var tableRow = document.createElement('tr');
-
-  var cell = document.createElement('td');
-  cell.textContent = ('Totals');
-  tableRow.appendChild(cell);
-
-  for (var i = 0; i < hoursTotalForAll.length; i++) {
-    cell = document.createElement('td');
-    cell.textContent = hoursTotalForAll;
-    tableRow.appendChild(cell);
-    tableFoot.appendChild(tableRow);
-  }
-
-};
 
