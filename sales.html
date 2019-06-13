@@ -6,7 +6,8 @@
     </head>
     <body>
         <header>
-
+        <!-- <link rel="stylesheet" href= ".\css\reset.css"/> -->
+        <!-- <link rel="stylesheet" href= ".\css\style.css"/> -->
         </header>
        
        
@@ -17,7 +18,7 @@
 
             <div>
             
-                <table>
+                <table id = 'storeTable'>
                     <thead id = 'timeData'>
 
                     </thead>
@@ -32,18 +33,27 @@
 
 
                 </table> 
-                  
             
-                </table>
+            
+                <form id = 'myForm'>
+                    <fieldset>
+                        <legend>New Store Data</legend>
+                        <input id = 'name' name = '' type = 'string' placeholder="Enter new store name"/>
+                        <input id = 'minCust' Min Customers = '' type = 'number' placeholder="Enter Min Customers"/>
+                        <input id = 'maxCust' Max Customers = '' type = 'number' placeholder="Enter Max Customers"/>
+                        <input id = 'avgCookie' Avg Cookies Per Customer = '' type = 'number' placeholder="Enter Avg Cookies"/>
+                        <button id = 'submit' type = 'submit'>Add Store</button>
+
+            
+                    </fieldset>
+                </form>
+            <div id = 'tasks'>
+
             </div>
-            
-
-
+    
        
         </main>
     
-    
-      
         <footer>
 
         </footer>

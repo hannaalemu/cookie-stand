@@ -1,0 +1,28 @@
+
+
+div {
+    border: 1px solid black;
+    margin: auto;
+    height: 300px;
+    padding: 1em;
+    width: 45%;
+}
+
+
+#storeTable {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 10px;
+    width: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+#tasks, #tasks > div {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    height: 1em;
+    width: auto;
+}
