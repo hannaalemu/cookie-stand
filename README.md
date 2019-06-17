@@ -6,7 +6,7 @@ Cookie Stand (Salmon cookies)
 
 ## About
 
-This project is about a cookie stand business designed to log the number of customers and cookies sold per hour.
+This project is about a cookie stand business designed to log the number of customers and cookies sold per hour. It also includes a homepage designed to give general information about the business.
 
 
 Hanna Alemu
